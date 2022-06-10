@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:thincloud/HomePage.dart';
 //
 import '../animation/fadeanimation.dart';
 
@@ -84,7 +85,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: () {
                       FirebaseAuth.instance.signOut();
                     },
-                    child: const Text("Log out")))
+                    child: const Text("Log out"))),
+            FadeAnimation(
+                delay: 2.5,
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomePage()),
+                      );
+                    },
+                    child: const Text("devam et")))
           ],
         ),
       ),
